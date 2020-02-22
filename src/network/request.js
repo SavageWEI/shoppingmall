@@ -11,7 +11,7 @@ export function request(config) {
   //2.axios的拦截器
   //2.1请求拦截的作用
   instance.interceptors.request.use(config => {
-    console.log(config);
+    // console.log(config);
     //需要拦截的情况
     //1.若config中的一些消息不符合服务器的要求
     //2.每次发送网络请求时，都希望在界面中显示一个请求的图标
@@ -20,7 +20,7 @@ export function request(config) {
     //拦截后要返回
     return config
   }, err => {
-    console.log(err);
+    // console.log(err);
   });
 
   //2.2 响应拦截
@@ -28,7 +28,7 @@ export function request(config) {
     // console.log(res);
     return res.data
   }, err => {
-    console.log(err);
+    // console.log(err);
   })
 
   //3.发送真正的网络请求

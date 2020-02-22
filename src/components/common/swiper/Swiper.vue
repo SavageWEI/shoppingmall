@@ -1,7 +1,9 @@
 <template>
   <el-carousel indicator-position="outside" class="swiper">
     <el-carousel-item v-for="(item, index) in banners" :key="index">
-      <a :href="item.link"><img :src="item.image" alt=""></a>
+      <a :href="item.link">
+        <img :src="item.image" alt="" @load="imageLoad">
+      </a>
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -18,11 +20,17 @@ export default {
   },
   data () {
     return {
-
+      isLoad: false
     }
   },
   methods: {
-
+    imageLoad() {
+      // console.log('imageload');
+      if(!this.isLoad) {
+        this.$emit('swiperImageLoad')
+        this.isLoad = true
+      }
+    }
   },
   components: {
 

@@ -6,6 +6,8 @@ import ElementUI from 'element-ui'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$bus = new Vue()
+
 Vue.use(ElementUI)
 
 new Vue({

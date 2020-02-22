@@ -26,7 +26,9 @@ export default {
 <style scoped>
   .goods {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-around;
+    flex-flow:row wrap;
+    /* height: 100vh; */
   }
 </style>
